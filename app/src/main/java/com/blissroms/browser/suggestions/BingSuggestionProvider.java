@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.blissroms.browser.utils;
 
-import android.security.NetworkSecurityPolicy;
+package com.blissroms.browser.suggestions;
 
-public final class NetworkSecurityPolicyUtils {
+import androidx.annotation.NonNull;
 
-    private NetworkSecurityPolicyUtils() {
+/**
+ * Search suggestions provider for Bing search engine.
+ */
+class BingSuggestionProvider extends SuggestionProvider {
+    BingSuggestionProvider() {
+        super("UTF-8");
     }
 
-    public static boolean isSupported() {
-        return true;
-    }
-
-    public static void setCleartextTrafficPermitted(boolean permitted) {
-        NetworkSecurityPolicy policy = NetworkSecurityPolicy.getInstance();
-        policy.setCleartextTrafficPermitted(permitted);
+    @NonNull
+    protected String createQueryUrl(@NonNull String query,
+                                    @NonNull String language) {
+        return "https://api.bing.com/osjson.aspx?query=" + query + "&language=" + language;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.blissroms.browser.utils;
 
-import android.security.NetworkSecurityPolicy;
+package com.blissroms.browser;
 
-public final class NetworkSecurityPolicyUtils {
+import android.content.IntentFilter;
 
-    private NetworkSecurityPolicyUtils() {
-    }
-
-    public static boolean isSupported() {
-        return true;
-    }
-
-    public static void setCleartextTrafficPermitted(boolean permitted) {
-        NetworkSecurityPolicy policy = NetworkSecurityPolicy.getInstance();
-        policy.setCleartextTrafficPermitted(permitted);
+public class IntentFilterCompat {
+    public static boolean filterIsBrowser(IntentFilter filter) {
+        return filter.countDataAuthorities() == 0;
     }
 }

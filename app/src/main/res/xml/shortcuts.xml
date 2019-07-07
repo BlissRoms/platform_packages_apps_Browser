@@ -22,8 +22,8 @@
         android:shortcutShortLabel="@string/shortcut_new_incognito_tab">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="org.lineageos.jelly.MainActivity"
-            android:targetPackage="org.lineageos.jelly">
+            android:targetClass="com.blissroms.browser.MainActivity"
+            android:targetPackage="org.blissroms.browser">
             <extra
                 android:name="extra_incognito"
                 android:value="true" />

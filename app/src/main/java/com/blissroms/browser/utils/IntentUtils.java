@@ -13,21 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.blissroms.browser.utils;
+package com.blissroms.browser.utils;
 
-import android.security.NetworkSecurityPolicy;
+public final class IntentUtils {
+    public static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
+    public static final String EXTRA_INCOGNITO = "extra_incognito";
+    public static final String EXTRA_URL = "extra_url";
+    public static final String EXTRA_UI_MODE = "extra_ui_mode";
 
-public final class NetworkSecurityPolicyUtils {
+    public static final String EVENT_CHANGE_UI_MODE = "intent_change_ui_mode";
 
-    private NetworkSecurityPolicyUtils() {
-    }
-
-    public static boolean isSupported() {
-        return true;
-    }
-
-    public static void setCleartextTrafficPermitted(boolean permitted) {
-        NetworkSecurityPolicy policy = NetworkSecurityPolicy.getInstance();
-        policy.setCleartextTrafficPermitted(permitted);
-    }
+    public static final String EVENT_URL_RESOLVED = "intent_url_resolved";
 }

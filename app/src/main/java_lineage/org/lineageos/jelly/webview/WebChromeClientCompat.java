@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.jelly.webview;
+package org.blissroms.browser.webview;
 
 import android.webkit.WebChromeClient;
 

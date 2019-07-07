@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.jelly;
+package org.blissroms.browser;
 
 import android.content.IntentFilter;
 

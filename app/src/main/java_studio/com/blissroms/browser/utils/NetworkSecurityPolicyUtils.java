@@ -13,21 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.blissroms.browser.utils;
-
-import android.security.NetworkSecurityPolicy;
+package com.blissroms.browser.utils;
 
 public final class NetworkSecurityPolicyUtils {
 
     private NetworkSecurityPolicyUtils() {
     }
 
+    @SuppressWarnings("SameReturnValue")
     public static boolean isSupported() {
-        return true;
+        return false;
     }
 
+    @SuppressWarnings("UnusedParameters")
     public static void setCleartextTrafficPermitted(boolean permitted) {
-        NetworkSecurityPolicy policy = NetworkSecurityPolicy.getInstance();
-        policy.setCleartextTrafficPermitted(permitted);
     }
 }
